@@ -29,7 +29,10 @@ namespace BerlinClock.Tests
         [InlineData("03:04:05", 3, 4, 5)]
         public void ShouldReturnTimeSpan(string input, int hours, int minutes, int seconds)
         {
-            timeParser.ParseTimeString(input);
+            TimeSpan time = timeParser.ParseTimeString(input);
+            Assert.Equal(time.Hours, hours);
+            Assert.Equal(time.Minutes, minutes);
+            Assert.Equal(time.Seconds, seconds);
         }
     }
 }
