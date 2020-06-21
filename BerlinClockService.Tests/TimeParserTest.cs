@@ -12,10 +12,15 @@ namespace BerlinClock.Tests
             timeParser = new TimeParser();
         }
 
-        [Fact]
-        public void ShouldThrowException()
+        [Theory]
+        [InlineData("25:17:02")]
+        [InlineData("22:76:21")]
+        [InlineData("03:04:66")]
+        [InlineData("3:4:6")]
+        [InlineData("some other invalid input")]
+        public void ShouldThrowException(string input)
         {
-            throw new NotImplementedException();
+            Assert.Throws<FormatException>(() => timeParser.ParseTimeString(input));
         }
 
         [Theory]
