@@ -12,7 +12,20 @@ namespace BerlinClock.Service
         }
 
         public string getBerlinTime(string input) {
-            throw new NotImplementedException();
+            TimeSpan time = timeParser.ParseTimeString(input);
+
+            return getSecondString(time) + "\n" + getHourString(time) + "\n" + getMinuteString(time);
+        }
+
+        private string getHourString(TimeSpan time) {
+            return "";
+        }
+        private string getMinuteString(TimeSpan time) {
+            return "";
+        }
+        private string getSecondString(TimeSpan time) {
+            return time.Seconds % 2 == 1 ? "Y" : "O";
         }
     }
+}    }
 }
