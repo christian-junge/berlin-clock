@@ -18,7 +18,18 @@ namespace BerlinClock.Service
         }
 
         private string getHourString(TimeSpan time) {
-            return "";
+            string firstLine = "";
+            string secondLine = "";
+
+            for (int i = 0; i < time.Hours / 5; i++) {
+                firstLine += "R";
+            }
+
+            for (int i = 0; i < time.Hours % 5; i++) {
+                secondLine += "R";
+            }
+
+            return firstLine.PadRight(4, 'O') + "\n" + secondLine.PadRight(4, 'O');
         }
         private string getMinuteString(TimeSpan time) {
             return "";
