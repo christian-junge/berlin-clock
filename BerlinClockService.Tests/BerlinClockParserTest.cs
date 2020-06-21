@@ -8,7 +8,7 @@ namespace BerlinClock.Tests
     public class BerlinClockParserTest
     {
         [Theory]
-        [InlineData("13:17:02", "Y\nRROO\nRRRO\nYOOOOOOOOOO\nYYOO")]
+        [InlineData("13:17:02", "Y\nRROO\nRRRO\nYYROOOOOOOO\nYYOO")]
         [InlineData("02:10:17", "O\nOOOO\nRROO\nYYOOOOOOOOO\nOOOO")]
         [InlineData("23:59:02", "Y\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY")]
         [InlineData("00:00:33", "O\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO")]
